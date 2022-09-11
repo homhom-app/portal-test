@@ -1,16 +1,30 @@
-import { useState } from "react";
-import { Modal } from "./Modal";
+import { FC, useState } from "react";
+import { Portal } from "./Portal";
 
-export const Main = () => {
-    const [isOpen, setIsOpen] = useState(false);
+
+export const Main: FC = () => {
+    const [showPortal, setShowPortal] = useState(false);
     const handleClick = () => {
-        isOpen ? setIsOpen(false) : setIsOpen(true);
+        showPortal ? setShowPortal(false) : setShowPortal(true);
     };
     return (
-        <div className="main" style={{backgroundColor: "lightblue", width: "90vw"}}>
-        <div id="modal"></div>
-            <button onClick={handleClick}>button</button>
-            {isOpen && <Modal />}
+        <div id="main" style={{backgroundColor: "lightblue", width: "90vw"}}>
+            {/* <div style={{position: "relative"}}> */}
+                { showPortal && <Portal />}
+            {/* </div> */}
+            <div style={{position: "absolute"}}>
+                Main<br />
+                <button onClick={handleClick}>Show/Hide portal</button>
+            </div>
+            
+            
+        {/* <div id="modal"></div> */}
+            {/* <button onClick={handleClick}>button</button>
+            
+            {/* <Modal />
+            <p>Main</p> */}
+            
+            {/* <Modal><p>Main</p></Modal> */}
             
         </div>
         
