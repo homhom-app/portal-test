@@ -8,26 +8,16 @@ export const Main: FC = () => {
         showPortal ? setShowPortal(false) : setShowPortal(true);
     };
     return (
-        <div id="main" style={{backgroundColor: "lightblue", width: "90vw"}}>
-            {/* <div style={{position: "relative"}}> */}
+        <div id="main" style={{
+            backgroundColor: "lightblue", width: "90vw"
+            }}>
                 { showPortal && <Portal />}
-            {/* </div> */}
             <div style={{position: "absolute"}}>
                 Main<br />
                 <button onClick={handleClick}>Show/Hide portal</button>
-            </div>
-            
-            
-        {/* <div id="modal"></div> */}
-            {/* <button onClick={handleClick}>button</button>
-            
-            {/* <Modal />
-            <p>Main</p> */}
-            
-            {/* <Modal><p>Main</p></Modal> */}
-            
+            </div>            
         </div>
         
-    )
-}
+    );
+};
 
